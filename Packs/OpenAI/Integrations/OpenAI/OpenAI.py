@@ -2,10 +2,6 @@ import demistomock as demisto  # noqa: F401
 from CommonServerPython import *  # noqa: F401
 
 
-
-
-
-
 import json
 import urllib3
 
@@ -23,6 +19,7 @@ class Client(BaseClient):
     """
         Client class to interact with the OpenAI and Azure OpenAI APIs
     """
+
     def __init__(self, api_key: str, base_url: str, proxy: bool, is_azure: bool, verify: bool, version: str):
         super().__init__(base_url=base_url, proxy=proxy, verify=verify)
         self.api_key = api_key
@@ -217,7 +214,7 @@ def completions_command(client: Client, args: dict) -> CommandResults:
     temperature = args.get('temperature', 0.7)
     max_tokens = args.get('max_tokens', 256)
     top_p = args.get('top_p', 1)
-    frequency_penalty = args.get('frequency_penalty',0)
+    frequency_penalty = args.get('frequency_penalty', 0)
     presence_penalty = args.get('presence_penalty', 0)
     best_of = args.get("best_of", 1)
     stop = args.get("stop", None)
@@ -296,7 +293,7 @@ def main() -> None:
     except Exception as e:
         demisto.error(traceback.format_exc())  # print the traceback
         return_error("\n".join((f"Failed to execute {command} command.",
-                                 "Error:", str(e))))
+                                "Error:", str(e))))
 
 
 ''' ENTRY POINT '''
@@ -304,5 +301,3 @@ def main() -> None:
 
 if __name__ in ('__main__', '__builtin__', 'builtins'):
     main()
-
-

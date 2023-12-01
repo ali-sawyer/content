@@ -17,7 +17,7 @@
 - Enter Azure OpenAI API key in API Key
 - Check the box "Use Azure OpenAI?"
 - Optionally, enter a different API Version
-- Enter a different Model to Use for Test if the default model, "text-davinci-003", is not deployed
+- Enter a different Model to Use for Test if the default model is not deployed
 
 ## XSOAR Use Cases
 [Playbook of the Week: Using ChatGPT in Cortex XSOAR](https://www.paloaltonetworks.com/blog/security-operations/using-chatgpt-in-cortex-xsoar/)
